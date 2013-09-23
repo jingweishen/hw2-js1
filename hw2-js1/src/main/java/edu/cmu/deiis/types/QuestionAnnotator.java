@@ -12,19 +12,20 @@ public class QuestionAnnotator extends JCasAnnotator_ImplBase {
     
     //get document text
     String docText = myJCas.getDocumentText();
-    int pos = docText.indexOf("\r");   // the position of the first occurance of "\r"
+    int pos = docText.indexOf("?");   // the position of the first occurance of "\r"
     if (pos!=-1)
     {
       Question annotation = new Question (myJCas);
       annotation.setBegin(2);
-      annotation.setEnd(pos-1);
-      
+      annotation.setEnd(pos);
+      String question = docText.substring(2, pos);
+      System.out.println(question);
       
     }
     
     
     
-    
+    System.out.println("successful launch of 'QuestionAnnotator' ");
     
   }
 
