@@ -16,14 +16,7 @@ public class AnswerAnnotator extends JCasAnnotator_ImplBase {
     String tags = "[.\\?]";   
     String []results = docText.split(tags);
     
-    for (int i =1;i< results.length-1;i++)
-    {
-      
-      System.out.println(results[i]);
-      System.out.println(results[i].substring(6));
-      System.out.println(results[i].charAt(4));
-      
-    }
+    
     
     int pos = results[0].length()+1;
     

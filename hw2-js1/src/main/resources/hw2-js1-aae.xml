@@ -15,6 +15,9 @@
     <delegateAnalysisEngine key="EvaluationDescriptor">
       <import name="descriptors.EvaluationDescriptor"/>
     </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NgramDescriptor">
+      <import name="descriptors.NgramDescriptor"/>
+    </delegateAnalysisEngine>
     <delegateAnalysisEngine key="TokenDescriptor">
       <import name="descriptors.TokenDescriptor"/>
     </delegateAnalysisEngine>
@@ -28,9 +31,10 @@
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>
-        <node>AnswerDescriptor</node>
         <node>QuestionDescriptor</node>
+        <node>AnswerDescriptor</node>
         <node>TokenDescriptor</node>
+        <node>NgramDescriptor</node>
         <node>AnswerScoreDescriptor</node>
         <node>EvaluationDescriptor</node>
       </fixedFlow>

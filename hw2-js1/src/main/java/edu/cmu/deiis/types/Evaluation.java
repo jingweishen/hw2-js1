@@ -80,15 +80,13 @@ public class Evaluation extends JCasAnnotator_ImplBase {
     double precisionNum = 0;
     for (int i=0;i<numCorrect;i++){
       AnswerScore anSco =(AnswerScore) anScoV.get(i);
-      System.out.println(anSco.getScore());
-      System.out.println(anSco.getAnswer().getIsCorrect());
+      
       
       if(anSco.getAnswer().getIsCorrect()){
         precisionNum++;
-        System.out.println(precisionNum);
-      }
+             }
     }
-    System.out.println(precisionNum);
+    
     
     double precision = precisionNum/numCorrect;
     System.out.println("**********the precision********");

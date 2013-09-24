@@ -27,7 +27,7 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
      double num = 0;
       for (int i = 0; i< quesToken.length;i++){
         String regEx = quesToken[i];
-        System.out.println(regEx);
+        
         Pattern p = Pattern.compile(regEx,Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(ans);
         if(m.find()){
@@ -55,7 +55,7 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
       double pos=-1;
       for (int i=0;i<ansToken.length;i++){
         if (ansToken[i].equals("by")){
-          System.out.println("find by");
+          
           for (int j=0;j<quesToken.length;j++){
             if(quesToken[j].equals(ansToken[i+1])){
               pos=j;
@@ -68,8 +68,8 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
       
       //final score 
       double finalScore = 0.5*overlapScore + 0.25*negScore + 0.25*passiveScore;
-      System.out.println("total:" + Double.toString(finalScore)+ "over:"+ Double.toString(overlapScore)+ 
-              "neg:"+ Double.toString(negScore)+"pass:"+ Double.toString(passiveScore));
+     // System.out.println("total:" + Double.toString(finalScore)+ "over:"+ Double.toString(overlapScore)+ 
+      //        "neg:"+ Double.toString(negScore)+"pass:"+ Double.toString(passiveScore));
       return finalScore;
       
         
