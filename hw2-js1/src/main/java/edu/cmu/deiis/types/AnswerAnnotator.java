@@ -16,23 +16,32 @@ public class AnswerAnnotator extends JCasAnnotator_ImplBase {
     String tags = "[.\\?]";   
     String []results = docText.split(tags);
     
-    for (int i =1;i< results.length;i++)
+    for (int i =1;i< results.length-1;i++)
     {
-      String ans = results[i].substring(3);
-      System.out.println(ans);
+      
+      System.out.println(results[i]);
+      System.out.println(results[i].substring(6));
+      System.out.println(results[i].charAt(4));
+      
     }
-    int pos = results[0].length();
     
-    for (int i=1;i<results.length;i++)
+    int pos = results[0].length()+1;
+    
+    for (int i=1;i<results.length-1;i++)
     {
       //create annotation
       Answer annotation = new Answer(aJCas);
-     
-      annotation.setBegin(pos+4);
+      if ( results[i].charAt(4)=='0') 
+        annotation.setIsCorrect(false);
+      else
+        annotation.setIsCorrect(true);
+      annotation.setBegin(pos+6);
       annotation.setEnd(pos+results[i].length());
-      pos = pos + results[i].length();   // update the position 
+      annotation.addToIndexes();
+      pos = pos + results[i].length()+1;   // update the position 
       
     }
+    
     System.out.println("successful launch of 'AnswerAnnotator' ");
     
   }

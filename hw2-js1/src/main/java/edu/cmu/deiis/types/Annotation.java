@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Mon Sep 23 16:34:04 EDT 2013
- * XML source: C:/Users/sj/git/hw2-js1/hw2-js1/src/main/resources/descriptors/QuestionDescriptor.xml
+ * Updated by JCasGen Mon Sep 23 21:51:06 EDT 2013
+ * XML source: C:/Users/sj/git/hw2-js1/hw2-js1/src/main/resources/hw2-js1-aae.xml
  * @generated */
 public class Annotation extends org.apache.uima.jcas.tcas.Annotation {
   /** @generated

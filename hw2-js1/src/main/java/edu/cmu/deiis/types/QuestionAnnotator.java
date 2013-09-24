@@ -18,6 +18,8 @@ public class QuestionAnnotator extends JCasAnnotator_ImplBase {
       Question annotation = new Question (myJCas);
       annotation.setBegin(2);
       annotation.setEnd(pos);
+      annotation.setConfidence(1);
+      annotation.addToIndexes();
       String question = docText.substring(2, pos);
       System.out.println(question);
       

@@ -6,12 +6,13 @@ package edu.cmu.deiis.types;
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
+import org.apache.uima.tutorial.RoomNumber_Type;
 
 
 
 /** 
- * Updated by JCasGen Mon Sep 23 16:34:04 EDT 2013
- * XML source: C:/Users/sj/git/hw2-js1/hw2-js1/src/main/resources/descriptors/QuestionDescriptor.xml
+ * Updated by JCasGen Mon Sep 23 21:51:06 EDT 2013
+ * XML source: C:/Users/sj/git/hw2-js1/hw2-js1/src/main/resources/hw2-js1-aae.xml
  * @generated */
 public class Question extends Annotation {
   /** @generated
@@ -58,7 +59,11 @@ public class Question extends Annotation {
     * <!-- end-user-doc -->
   @generated modifiable */
   private void readObject() {/*default - does nothing empty block */}
-     
+  public double getConfidence() {
+    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_confidence == null)
+      jcasType.jcas.throwFeatMissing("confidence", "Question");
+    return jcasType.ll_cas.ll_getDoubleValue(addr, ((Question_Type)jcasType).casFeatCode_confidence);}
+    
 }
 
     

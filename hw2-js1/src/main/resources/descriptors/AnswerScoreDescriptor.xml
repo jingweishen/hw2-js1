@@ -2,9 +2,9 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>true</primitive>
-  <annotatorImplementationName>edu.cmu.deiis.types.TokenAnnotator</annotatorImplementationName>
+  <annotatorImplementationName>edu.cmu.deiis.types.AnswerScoreAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>TokenDescriptor</name>
+    <name>AnswerScoreAnnotator</name>
     <description/>
     <version>1.0</version>
     <vendor/>
@@ -24,7 +24,7 @@
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
         </inputs>
         <outputs>
-          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Token</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.AnswerScore</type>
         </outputs>
         <languagesSupported/>
       </capability>
